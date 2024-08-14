@@ -137,7 +137,7 @@ Aplicamos os seguintes filtros:
 -   seleção de bandas
 
 ``` python
-sel_bandas = ('B1', 'B2', 'B3', 'B4', 'B5')
+sel_bandas = ('B2', 'B3', 'B4', 'B5', 'B8')
 
 db = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
                 .filterBounds(aoi) \
@@ -218,23 +218,31 @@ plt.show()
 ### Visualizamos diferentes bandas com rasterio.plot {#visualizamos-diferentes-bandas-com-rasterioplot}
 
 ``` python
+# Abrir o arquivo raster
 with rasterio.open('teste.tif', 'r') as raster:
-    # Criar a figura com 2 colunas e 2 linhas
-    fig, axs = plt.subplots(ncols=2, nrows=2, figsize=(12, 10))
+    # Criar a figura com 2 colunas e 3 linhas para 5 gráficos
+    fig, axs = plt.subplots(ncols=2, nrows=3, figsize=(12, 18))
 
     # Plotar as bandas
-    show((raster, 2), cmap='Greens', ax=axs[0, 0])
-    show((raster, 3), cmap='Reds', ax=axs[0, 1])
-    show((raster, 5), cmap='magma', ax=axs[1, 0])
-    show((raster, 4), cmap='inferno', ax=axs[1, 1])
+    show((raster, 1), cmap='Blues', ax=axs[0, 0])  # Banda B2 (Azul)
+    show((raster, 2), cmap='Greens', ax=axs[0, 1])  # Banda B3 (Verde)
+    show((raster, 3), cmap='Reds', ax=axs[1, 0])    # Banda B4 (Vermelho)
+    show((raster, 4), cmap='inferno', ax=axs[1, 1]) # Banda B5 (Red Edge)
+    show((raster, 5), cmap='magma', ax=axs[2, 0])   # Banda B8 (NIR)
+
+    # Esconder o eixo do último subplot vazio
+    axs[2, 1].axis('off')
 
     # Adicionar títulos aos gráficos
-    axs[0, 0].set_title("Green")
-    axs[0, 1].set_title("Red")
-    axs[1, 0].set_title("NIR")
-    axs[1, 1].set_title("Red Edge")
+    axs[0, 0].set_title("Blue (B2)")
+    axs[0, 1].set_title("Green (B3)")
+    axs[1, 0].set_title("Red (B4)")
+    axs[1, 1].set_title("Red Edge (B5)")
+    axs[2, 0].set_title("NIR (B8)")
+
     fig.tight_layout()
-       
+
+    # Mostrar os gráficos
     plt.show()
 ```
 
