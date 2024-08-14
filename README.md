@@ -232,7 +232,7 @@ with rasterio.open('teste.tif', 'r') as raster:
     axs[0, 0].set_title("Green")
     axs[0, 1].set_title("Red")
     axs[1, 0].set_title("NIR")
-    axs[1, 1].set_title("VNIR")
+    axs[1, 1].set_title("Red Edge")
     fig.tight_layout()
        
     plt.show()
