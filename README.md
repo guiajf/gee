@@ -170,7 +170,6 @@ geemap.ee_export_image(img, filename=filename, scale=10, region=aoi, file_per_ba
 ### Abrimos o arquivo TIFF
 
 ``` python
-# Abra o arquivo TIFF
 with rasterio.open('teste.tif') as dataset:
     multibanda = dataset.read()
 ```
@@ -198,7 +197,6 @@ plt.show()
 ### Alteramos o formato da imagem e o mapa de cores
 
 ``` python
-# Abrir a imagem GeoTIFF
 with rasterio.open('teste.tif') as src:
     imagem = src.read(3)
     metados = src.meta
@@ -220,7 +218,6 @@ plt.show()
 ### Visualizamos diferentes bandas com rasterio.plot {#visualizamos-diferentes-bandas-com-rasterioplot}
 
 ``` python
-# Abrir o arquivo raster
 with rasterio.open('teste.tif', 'r') as raster:
     # Criar a figura com 2 colunas e 2 linhas
     fig, axs = plt.subplots(ncols=2, nrows=2, figsize=(12, 10))
