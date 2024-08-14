@@ -238,5 +238,5 @@ with rasterio.open('teste.tif', 'r') as raster:
     plt.show()
 ```
 
-![](db85dbedc8c7ab9efcadc1ae94b5185820d5c9c7.png)
+![](b0251757adf4a18f3061e87640870d01dd87a8a8.png)
 
