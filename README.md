@@ -1,32 +1,7 @@
----
-jupyter:
-  kernelspec:
-    display_name: Python 3 (ipykernel)
-    language: python
-    name: python3
-  language_info:
-    codemirror_mode:
-      name: ipython
-      version: 3
-    file_extension: .py
-    mimetype: text/x-python
-    name: python
-    nbconvert_exporter: python
-    pygments_lexer: ipython3
-    version: 3.10.12
-  nbformat: 4
-  nbformat_minor: 5
----
-
-::: {#f842ba93-f137-4b90-a236-bc325122d610 .cell .markdown}
 # Introdução ao Google Earth Engine
-:::
 
-::: {#f2638f59-93be-4de7-9178-da1389f37edd .cell .markdown}
 ## Sensoriamento remoto via satélite
-:::
 
-::: {#43fe9215-5540-48f7-b2b5-ef676d7820a1 .cell .markdown}
 Atualmente, há cerca de 5.000 satélites ativos orbitando a Terra. Este
 número inclui satélites de comunicação, meteorológicos, de observação da
 Terra, científicos, militares, entre outros.
@@ -91,13 +66,9 @@ dois satélites: **Sentinel-2A** e **Sentinel-2B**, lançados em 2015 e
 O **Sentinel-2**, com seus dados de alta qualidade e acessibilidade, é
 uma ferramenta essencial para a gestão sustentável dos recursos naturais
 e para enfrentar desafios ambientais globais.
-:::
 
-::: {#315077b4-28c5-42b2-9d34-1113768dd666 .cell .markdown}
 ## Google Earth Engine
-:::
 
-::: {#6a567de8-f678-4e7f-9e0f-910b5694245c .cell .markdown}
 **Google Earth Engine** é um catálogo que contém mais de 80 *petabytes*
 de dados geospaciais, disponíveis para análise e visualização, desde que
 o usuário cadastre uma **api key**.
@@ -106,17 +77,11 @@ Conta também com um editor de código
 (<https://code.earthengine.google.com/>), útil para extrair as
 coordenadas da área de interesse, caso você prefira outro ambiente de
 desenvolvimento.
-:::
 
-::: {#f6f773fb-6a19-4e7b-a181-751d9fe0ee5c .cell .markdown}
 ## Procedimentos básicos
-:::
 
-::: {#d6c889d0-b35e-4eac-915e-638b1e20c625 .cell .markdown}
 ### Importamos as bibliotecas
-:::
 
-::: {#88137d5a-7f55-49d6-b61a-5c9dd6067db8 .cell .code execution_count="1"}
 ``` python
 import ee
 import geemap
@@ -125,13 +90,9 @@ from rasterio.plot import show
 import matplotlib.pyplot as plt
 from matplotlib.patches import Polygon
 ```
-:::
 
-::: {#fce744bb-597e-4aa0-9258-58abab4f9d8f .cell .markdown}
 ### Inicializamos a API
-:::
 
-::: {#90303401-8359-4c8e-a566-769185415112 .cell .code execution_count="2"}
 ``` python
 # Processo de autenticação
 ee.Authenticate()
@@ -140,83 +101,20 @@ ee.Authenticate()
 ee.Initialize()
 ```
 
-::: {.output .display_data}
-```{=html}
-
-            <style>
-                .geemap-dark {
-                    --jp-widgets-color: white;
-                    --jp-widgets-label-color: white;
-                    --jp-ui-font-color1: white;
-                    --jp-layout-color2: #454545;
-                    background-color: #383838;
-                }
-
-                .geemap-dark .jupyter-button {
-                    --jp-layout-color3: #383838;
-                }
-
-                .geemap-colab {
-                    background-color: var(--colab-primary-surface-color, white);
-                }
-
-                .geemap-colab .jupyter-button {
-                    --jp-layout-color3: var(--colab-primary-surface-color, white);
-                }
-            </style>
-            
-```
-:::
-:::
-
-::: {#1ba6ac6a-0002-48a4-9999-7a5ce70a46ba .cell .markdown}
 ### Intervalo temporal
 
 Definimos o período para captura das imagens:
-:::
 
-::: {#f7a3afdc-c959-462a-bc55-da3f30959276 .cell .code execution_count="3"}
 ``` python
 data_inicial = '2024-04-01'
 data_final = '2024-07-31'
 ```
 
-::: {.output .display_data}
-```{=html}
 
-            <style>
-                .geemap-dark {
-                    --jp-widgets-color: white;
-                    --jp-widgets-label-color: white;
-                    --jp-ui-font-color1: white;
-                    --jp-layout-color2: #454545;
-                    background-color: #383838;
-                }
-
-                .geemap-dark .jupyter-button {
-                    --jp-layout-color3: #383838;
-                }
-
-                .geemap-colab {
-                    background-color: var(--colab-primary-surface-color, white);
-                }
-
-                .geemap-colab .jupyter-button {
-                    --jp-layout-color3: var(--colab-primary-surface-color, white);
-                }
-            </style>
-            
-```
-:::
-:::
-
-::: {#1d11e81c-daea-407b-9259-d62ae2359f78 .cell .markdown}
 ### Área de interesse
 
 Definimos as coordenadas da área de interesse:
-:::
 
-::: {#3b09a50a-78c9-48e7-87a3-0177e014b086 .cell .code execution_count="4"}
 ``` python
 polygon_coords = [
     [-43.41287287680422, -21.756108688468274],
@@ -229,48 +127,15 @@ polygon_coords = [
 aoi = ee.Geometry.Polygon(polygon_coords, None, False)
 ```
 
-::: {.output .display_data}
-```{=html}
 
-            <style>
-                .geemap-dark {
-                    --jp-widgets-color: white;
-                    --jp-widgets-label-color: white;
-                    --jp-ui-font-color1: white;
-                    --jp-layout-color2: #454545;
-                    background-color: #383838;
-                }
-
-                .geemap-dark .jupyter-button {
-                    --jp-layout-color3: #383838;
-                }
-
-                .geemap-colab {
-                    background-color: var(--colab-primary-surface-color, white);
-                }
-
-                .geemap-colab .jupyter-button {
-                    --jp-layout-color3: var(--colab-primary-surface-color, white);
-                }
-            </style>
-            
-```
-:::
-:::
-
-::: {#2e2ef316-6ac3-4fbc-83f8-b844b6433dcf .cell .markdown}
 ### Definimos a coleção de imagens
-:::
 
-::: {#9e0fe117-a1ce-4f6e-9f58-33690e6c8e9d .cell .markdown}
 Aplicamos os seguintes filtros:
 
 -   área de interesse;
 -   intervalo temporal;
 -   seleção de bandas
-:::
 
-::: {#619325af-2cdb-4e69-98db-baa391028a7d .cell .code execution_count="5"}
 ``` python
 sel_bandas = ('B1', 'B2', 'B3', 'B4', 'B5')
 
@@ -280,200 +145,45 @@ db = ee.ImageCollection('COPERNICUS/S2_SR_HARMONIZED') \
                 .select(sel_bandas)
 ```
 
-::: {.output .display_data}
-```{=html}
 
-            <style>
-                .geemap-dark {
-                    --jp-widgets-color: white;
-                    --jp-widgets-label-color: white;
-                    --jp-ui-font-color1: white;
-                    --jp-layout-color2: #454545;
-                    background-color: #383838;
-                }
-
-                .geemap-dark .jupyter-button {
-                    --jp-layout-color3: #383838;
-                }
-
-                .geemap-colab {
-                    background-color: var(--colab-primary-surface-color, white);
-                }
-
-                .geemap-colab .jupyter-button {
-                    --jp-layout-color3: var(--colab-primary-surface-color, white);
-                }
-            </style>
-            
-```
-:::
-:::
-
-::: {#2f57fbb5-0f57-490b-a30e-da2f2c219091 .cell .markdown}
 ### Extraímos a imagem com menor cobertura de nuvens
-:::
 
-::: {#615f8a71-7783-4e56-8e10-52008acd7fcd .cell .code execution_count="6"}
 ``` python
 img = ee.Image(db.sort('CLOUDY_PIXEL_PERCENTAGE').first())
 ```
 
-::: {.output .display_data}
-```{=html}
 
-            <style>
-                .geemap-dark {
-                    --jp-widgets-color: white;
-                    --jp-widgets-label-color: white;
-                    --jp-ui-font-color1: white;
-                    --jp-layout-color2: #454545;
-                    background-color: #383838;
-                }
-
-                .geemap-dark .jupyter-button {
-                    --jp-layout-color3: #383838;
-                }
-
-                .geemap-colab {
-                    background-color: var(--colab-primary-surface-color, white);
-                }
-
-                .geemap-colab .jupyter-button {
-                    --jp-layout-color3: var(--colab-primary-surface-color, white);
-                }
-            </style>
-            
-```
-:::
-:::
-
-::: {#6ffb42ee-da71-4e54-84c8-9de35fcc9a1b .cell .markdown}
 ### Salvamos a imagem no formato tif
-:::
 
-::: {#14e316c5-c9f5-494e-99a6-59cb01d70458 .cell .code execution_count="7"}
 ``` python
 filename = 'teste.tif'
 geemap.ee_export_image(img, filename=filename, scale=10, region=aoi, file_per_band=False)
     
 ```
 
-::: {.output .display_data}
-```{=html}
 
-            <style>
-                .geemap-dark {
-                    --jp-widgets-color: white;
-                    --jp-widgets-label-color: white;
-                    --jp-ui-font-color1: white;
-                    --jp-layout-color2: #454545;
-                    background-color: #383838;
-                }
-
-                .geemap-dark .jupyter-button {
-                    --jp-layout-color3: #383838;
-                }
-
-                .geemap-colab {
-                    background-color: var(--colab-primary-surface-color, white);
-                }
-
-                .geemap-colab .jupyter-button {
-                    --jp-layout-color3: var(--colab-primary-surface-color, white);
-                }
-            </style>
-            
-```
-:::
-
-::: {.output .stream .stdout}
     Generating URL ...
     Downloading data from https://earthengine.googleapis.com/v1/projects/earthengine-legacy/thumbnails/19173b9b5d62449fae0e3e3917e4cb32-a66a6b3909912300c02b12e1d56ca593:getPixels
     Please wait ...
     Data downloaded to /home/gf/jupyterlab_projects/Sat_Images/teste.tif
-:::
-:::
 
-::: {#eced7a80-879a-4c99-823e-265175dedf80 .cell .markdown}
 ### Abrimos o arquivo TIFF
-:::
 
-::: {#cde6d16d-57dc-49f2-a035-59845b0e7076 .cell .code execution_count="8"}
 ``` python
 # Abra o arquivo TIFF
 with rasterio.open('teste.tif') as dataset:
     multibanda = dataset.read()
 ```
 
-::: {.output .display_data}
-```{=html}
 
-            <style>
-                .geemap-dark {
-                    --jp-widgets-color: white;
-                    --jp-widgets-label-color: white;
-                    --jp-ui-font-color1: white;
-                    --jp-layout-color2: #454545;
-                    background-color: #383838;
-                }
-
-                .geemap-dark .jupyter-button {
-                    --jp-layout-color3: #383838;
-                }
-
-                .geemap-colab {
-                    background-color: var(--colab-primary-surface-color, white);
-                }
-
-                .geemap-colab .jupyter-button {
-                    --jp-layout-color3: var(--colab-primary-surface-color, white);
-                }
-            </style>
-            
-```
-:::
-:::
-
-::: {#e00b17c7-e22f-44b1-85ab-d910b1adbc1e .cell .markdown}
 ### Selecionamos uma banda espectral
-:::
 
-::: {#173a7dd0-6f82-4d8c-8cbe-d265d2f00ed0 .cell .code execution_count="9"}
 ``` python
 with rasterio.open('teste.tif') as dataset:
     band3 = dataset.read(3)
 ```
 
-::: {.output .display_data}
-```{=html}
 
-            <style>
-                .geemap-dark {
-                    --jp-widgets-color: white;
-                    --jp-widgets-label-color: white;
-                    --jp-ui-font-color1: white;
-                    --jp-layout-color2: #454545;
-                    background-color: #383838;
-                }
-
-                .geemap-dark .jupyter-button {
-                    --jp-layout-color3: #383838;
-                }
-
-                .geemap-colab {
-                    background-color: var(--colab-primary-surface-color, white);
-                }
-
-                .geemap-colab .jupyter-button {
-                    --jp-layout-color3: var(--colab-primary-surface-color, white);
-                }
-            </style>
-            
-```
-:::
-:::
-
-::: {#6a113f25-2f78-4f95-9434-d65905e15aed .cell .markdown}
 ### Visualizamos a imagem com Matplotlib
 :::
 
