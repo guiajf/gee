@@ -75,7 +75,7 @@ o usuário cadastre uma **api key**, e que as regras de termos de uso do produto
 
 Conta também com um editor de código
 (<https://code.earthengine.google.com/>), útil para extrair as
-coordenadas da área de interesse, caso você prefira outro ambiente de
+coordenadas da área de interesse, caso o usuário prefira outro ambiente de
 desenvolvimento.
 
 ## Procedimentos básicos
