@@ -193,7 +193,7 @@ plt.show()
 ```
 
 
-![](vertopal_7012e0f2f0664d499210b7fa1cd6df73/6c4a42d0fa5e5c179c132a00eadcb5c46ad690b2.png)
+![](6c4a42d0fa5e5c179c132a00eadcb5c46ad690b2.png)
 
 ### Alteramos o formato da imagem e o mapa de cores
 
@@ -215,7 +215,7 @@ plt.show()
 ```
 
 
-![](vertopal_7012e0f2f0664d499210b7fa1cd6df73/3bb1bcadfac962af7179fd2ca01c8cce6817fb5b.png)
+![](3bb1bcadfac962af7179fd2ca01c8cce6817fb5b.png)
 
 ### Visualizamos diferentes bandas com rasterio.plot {#visualizamos-diferentes-bandas-com-rasterioplot}
 
@@ -241,5 +241,5 @@ with rasterio.open('teste.tif', 'r') as raster:
     plt.show()
 ```
 
-![](vertopal_7012e0f2f0664d499210b7fa1cd6df73/db85dbedc8c7ab9efcadc1ae94b5185820d5c9c7.png)
+![](db85dbedc8c7ab9efcadc1ae94b5185820d5c9c7.png)
 
