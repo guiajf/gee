@@ -185,53 +185,18 @@ with rasterio.open('teste.tif') as dataset:
 
 
 ### Visualizamos a imagem com Matplotlib
-:::
 
-::: {#c5dd90d2-76d1-41dd-ba55-50b2d735c2c4 .cell .code execution_count="10"}
 ``` python
 
 plt.imshow(band3, cmap='pink')
 plt.show()
 ```
 
-::: {.output .display_data}
-```{=html}
 
-            <style>
-                .geemap-dark {
-                    --jp-widgets-color: white;
-                    --jp-widgets-label-color: white;
-                    --jp-ui-font-color1: white;
-                    --jp-layout-color2: #454545;
-                    background-color: #383838;
-                }
-
-                .geemap-dark .jupyter-button {
-                    --jp-layout-color3: #383838;
-                }
-
-                .geemap-colab {
-                    background-color: var(--colab-primary-surface-color, white);
-                }
-
-                .geemap-colab .jupyter-button {
-                    --jp-layout-color3: var(--colab-primary-surface-color, white);
-                }
-            </style>
-            
-```
-:::
-
-::: {.output .display_data}
 ![](vertopal_7012e0f2f0664d499210b7fa1cd6df73/6c4a42d0fa5e5c179c132a00eadcb5c46ad690b2.png)
-:::
-:::
 
-::: {#ff7bc749-78a9-447a-b0ba-5cff89d80ae6 .cell .markdown}
 ### Alteramos o formato da imagem e o mapa de cores
-:::
 
-::: {#886bd9bf-f166-4699-9b4a-64b241467808 .cell .code execution_count="11"}
 ``` python
 # Abrir a imagem GeoTIFF
 with rasterio.open('teste.tif') as src:
@@ -249,44 +214,11 @@ plt.ylabel('Latitude')
 plt.show()
 ```
 
-::: {.output .display_data}
-```{=html}
 
-            <style>
-                .geemap-dark {
-                    --jp-widgets-color: white;
-                    --jp-widgets-label-color: white;
-                    --jp-ui-font-color1: white;
-                    --jp-layout-color2: #454545;
-                    background-color: #383838;
-                }
-
-                .geemap-dark .jupyter-button {
-                    --jp-layout-color3: #383838;
-                }
-
-                .geemap-colab {
-                    background-color: var(--colab-primary-surface-color, white);
-                }
-
-                .geemap-colab .jupyter-button {
-                    --jp-layout-color3: var(--colab-primary-surface-color, white);
-                }
-            </style>
-            
-```
-:::
-
-::: {.output .display_data}
 ![](vertopal_7012e0f2f0664d499210b7fa1cd6df73/3bb1bcadfac962af7179fd2ca01c8cce6817fb5b.png)
-:::
-:::
 
-::: {#3fb195a7-a2e4-4d73-89cc-507fdd754d06 .cell .markdown}
 ### Visualizamos diferentes bandas com rasterio.plot {#visualizamos-diferentes-bandas-com-rasterioplot}
-:::
 
-::: {#1b6f606e-6316-4b62-adfd-d7f8e2800b56 .cell .code execution_count="12"}
 ``` python
 # Abrir o arquivo raster
 with rasterio.open('teste.tif', 'r') as raster:
@@ -309,35 +241,5 @@ with rasterio.open('teste.tif', 'r') as raster:
     plt.show()
 ```
 
-::: {.output .display_data}
-```{=html}
-
-            <style>
-                .geemap-dark {
-                    --jp-widgets-color: white;
-                    --jp-widgets-label-color: white;
-                    --jp-ui-font-color1: white;
-                    --jp-layout-color2: #454545;
-                    background-color: #383838;
-                }
-
-                .geemap-dark .jupyter-button {
-                    --jp-layout-color3: #383838;
-                }
-
-                .geemap-colab {
-                    background-color: var(--colab-primary-surface-color, white);
-                }
-
-                .geemap-colab .jupyter-button {
-                    --jp-layout-color3: var(--colab-primary-surface-color, white);
-                }
-            </style>
-            
-```
-:::
-
-::: {.output .display_data}
 ![](vertopal_7012e0f2f0664d499210b7fa1cd6df73/db85dbedc8c7ab9efcadc1ae94b5185820d5c9c7.png)
-:::
-:::
+
