@@ -71,7 +71,7 @@ e para enfrentar desafios ambientais globais.
 
 **Google Earth Engine** é um catálogo que contém mais de 80 *petabytes*
 de dados geospaciais, disponíveis para análise e visualização, desde que
-o usuário cadastre uma **api key**.
+o usuário cadastre uma **api key**, e que as regras de termos de uso do produto sejam respeitadas.
 
 Conta também com um editor de código
 (<https://code.earthengine.google.com/>), útil para extrair as
