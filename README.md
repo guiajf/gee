@@ -175,7 +175,7 @@ with rasterio.open('teste.tif') as dataset:
 ```
 
 
-### Selecionamos uma banda espectral
+### Selecionamos uma banda específica
 
 ``` python
 with rasterio.open('teste.tif') as dataset:
@@ -215,7 +215,7 @@ plt.show()
 
 ![](3bb1bcadfac962af7179fd2ca01c8cce6817fb5b.png)
 
-### Visualizamos diferentes bandas com rasterio.plot {#visualizamos-diferentes-bandas-com-rasterioplot}
+### Visualizamos múltiplas bandas separadamente com rasterio.plot
 
 ``` python
 # Abrir o arquivo raster
