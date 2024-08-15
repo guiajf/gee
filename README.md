@@ -220,25 +220,20 @@ plt.show()
 ``` python
 # Abrir o arquivo raster
 with rasterio.open('teste.tif', 'r') as raster:
-    # Criar a figura com 2 colunas e 3 linhas para 5 gráficos
-    fig, axs = plt.subplots(ncols=2, nrows=3, figsize=(12, 18))
+    # Criar a figura com 2 colunas e 2 linhas para 4 gráficos
+    fig, axs = plt.subplots(ncols=2, nrows=2, figsize=(18, 12))
 
     # Plotar as bandas
     show((raster, 1), cmap='Blues', ax=axs[0, 0])  # Banda B2 (Azul)
     show((raster, 2), cmap='Greens', ax=axs[0, 1])  # Banda B3 (Verde)
     show((raster, 3), cmap='Reds', ax=axs[1, 0])    # Banda B4 (Vermelho)
-    show((raster, 4), cmap='inferno', ax=axs[1, 1]) # Banda B5 (Red Edge)
-    show((raster, 5), cmap='magma', ax=axs[2, 0])   # Banda B8 (NIR)
-
-    # Esconder o eixo do último subplot vazio
-    axs[2, 1].axis('off')
+    show((raster, 4), cmap='magma', ax=axs[1, 1])   # Banda B8 (NIR)
 
     # Adicionar títulos aos gráficos
     axs[0, 0].set_title("Blue (B2)")
     axs[0, 1].set_title("Green (B3)")
     axs[1, 0].set_title("Red (B4)")
-    axs[1, 1].set_title("Red Edge (B5)")
-    axs[2, 0].set_title("NIR (B8)")
+    axs[1, 1].set_title("NIR (B8)")
 
     fig.tight_layout()
 
@@ -246,5 +241,5 @@ with rasterio.open('teste.tif', 'r') as raster:
     plt.show()
 ```
 
-![](b0251757adf4a18f3061e87640870d01dd87a8a8.png)
+![](f6fb777a878bd5bb6986fb17d4fb626d7f164914.png)
 
