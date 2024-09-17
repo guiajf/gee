@@ -7,7 +7,7 @@ número inclui satélites de comunicação, meteorológicos, de observação da
 Terra, científicos, militares, entre outros.
 
 O número de sensores por satélite varia conforme o propósito do
-satélite. Satélites de observação da Terra, como os da série Landsat,
+satélite. Aqueles projetados para a observação da Terra, como os da série Landsat,
 Sentinel e outros, geralmente possuem entre 1 a 10 sensores, dependendo
 da sua missão específica.
 
